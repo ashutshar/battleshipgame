@@ -14,6 +14,7 @@ public class TwoPlayerGame extends AbstractMultiPlayerGame {
     public TwoPlayerGame(int boardSize, String boardShape) throws IOException {
         this.board = addBoard(boardSize, boardShape);
         addPlayers(2);
+        this.fireStrategy = new RandomFireStrategy(boardSize);
     }
 
 }

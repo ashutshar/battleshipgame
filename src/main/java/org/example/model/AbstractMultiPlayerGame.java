@@ -1,6 +1,7 @@
 package org.example.model;
 
 import org.example.model.type.IBoard;
+import org.example.model.type.IFireStrategy;
 import org.example.model.type.IGame;
 import org.example.util.TakeUserInput;
 
@@ -11,6 +12,8 @@ import java.util.List;
 public abstract class AbstractMultiPlayerGame implements IGame {
     List<Player> players;
     IBoard board;
+
+    IFireStrategy fireStrategy;
 
     public IBoard addBoard(int n, String boardShape) {
         if (boardShape.equalsIgnoreCase("square")) {
