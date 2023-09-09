@@ -26,8 +26,16 @@ public abstract class AbstractMultiPlayerGame implements IGame {
         for (int i = 1 ; i <= num; i++) {
             System.out.println("Enter Player "+ i +"'s Name");
             String name = TakeUserInput.takeUserInput();
-            players.add(new Player(board, name));
+            Player player = new Player(board, name);
+            if (i == 1) {
+                player.setFirstHalf(true);
+            }
+            players.add(player);
         }
+        return players;
+    }
+
+    public List<Player> listPlayers() {
         return players;
     }
 }
